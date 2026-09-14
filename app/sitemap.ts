@@ -1,0 +1,2 @@
+import type { MetadataRoute } from "next"; import { profile,projects } from "@/content/site";
+export default function sitemap():MetadataRoute.Sitemap{const routes=["","/research","/engineering","/analytics","/projects",...projects.filter(p=>p.public).map(p=>`/projects/${p.slug}`)];return routes.map(path=>({url:`${profile.canonicalUrl}${path}`,changeFrequency:path?"monthly":"weekly",priority:path===""?1:path.startsWith("/projects/")?0.7:0.8}))}

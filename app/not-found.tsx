@@ -1,0 +1,1 @@
+import Link from "next/link"; export default function NotFound(){return <section className="page-hero"><p className="eyebrow">404 · Route not found</p><h1>This path does not map to a public project.</h1><p className="lede">Return to the portfolio or use the archive to find a documented system.</p><Link className="button" href="/">Return home</Link></section>}
