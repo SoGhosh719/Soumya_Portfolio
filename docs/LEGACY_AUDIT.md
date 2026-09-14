@@ -26,3 +26,9 @@ The repository was inventoried by file path and size. HTML, CSS, JavaScript, tex
 - Quarantined figures, private customer data, unverifiable project maturity, and unverified external links are omitted.
 
 The original Git history remains the archival record; legacy assets are not duplicated in the production tree.
+
+## V2 evidence migration
+
+The archive now includes Twitter sentiment, national commercial-bank analysis, actor age classification, and Boston transportation work using only bounded claims supplied in the master record. The Boston R² remains quarantined. Competition recognition is separated from research evidence, and Westcliff appears only as the competition organizer—not as an educational affiliation.
+
+Canonical URL handling no longer has an `example.com` fallback. IIT Kanpur is represented as a dated research internship rather than an educational `alumniOf` relationship.

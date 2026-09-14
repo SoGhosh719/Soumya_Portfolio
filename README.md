@@ -1,43 +1,30 @@
-# Soumyabrata Ghosh — portfolio
+# Soumyabrata Ghosh — research + engineering portfolio
 
-A statically rendered Next.js App Router portfolio built around one typed content layer and three audience lenses: research, engineering, and analytics.
+A statically rendered Next.js App Router portfolio organized around a typed content model, three audience lenses, and explicit distinctions between implemented, measured, designed, deployed, and planned work.
 
 ## Architecture
 
-- **Next.js 16 / React 19 / strict TypeScript.** Routes are Server Components by default; only theme selection and archive filtering ship client JavaScript.
-- **Central content:** edit profile, education, experience, lenses, and `Project` records in `content/site.ts`.
-- **Project routing:** each public project automatically receives `/projects/[slug]`, metadata, and a sitemap entry.
-- **Design system:** `app/globals.css` contains light/dark tokens and reusable layout/component classes. Geist variable fonts are optimized with `next/font`.
-- **Privacy:** no analytics, trackers, contact form, social profile, or unaudited project URL is enabled.
+- **Next.js 16 / React 19 / strict TypeScript.** Routes remain Server Components unless interaction requires client code.
+- **Central content:** `content/site.ts` owns profile, education, experience, recognition, lenses, project states, future media slots, and case-study records.
+- **Evidence-aware routing:** every public project gets a case route, metadata, deterministic navigation, and a sitemap entry.
+- **Code-native visuals:** architecture diagrams communicate boundaries without implying that unaudited screenshots exist.
+- **Privacy:** no analytics, trackers, social profiles, repositories, or unaudited external links are enabled.
 
 ## Local development
 
+Use Node 22 LTS (minimum Node 20.9):
+
 ```bash
 npm ci
+npx playwright install chromium
 npm run dev
 ```
 
-Open `http://localhost:3000`. Use Node.js 20.9 or newer.
+Local metadata resolves against `http://localhost:3000`.
 
-## Content editing
+## Canonical origin safety
 
-1. Update `content/site.ts`; do not hard-code profile facts in route components.
-2. Mark a project `public: false` until every published field is defensible.
-3. Keep `maturity`, `evidence`, `limitations`, and `nextSteps` explicit.
-4. Add audited media under `public/`, with useful alt text and dimensions in its project record.
-5. Record unresolved claims/assets in `docs/CONTENT_GAPS.md` rather than filling gaps.
-
-Future audited essays can be added as MDX under a `content/writing/` directory and exposed through a dedicated route only when meaningful content exists. The current build deliberately ships no writing index.
-
-## Environment
-
-Copy `.env.example` to `.env.local` and set:
-
-```bash
-NEXT_PUBLIC_SITE_URL=https://your-production-origin.example
-```
-
-This value drives canonical metadata, Open Graph URLs, `robots.txt`, and `sitemap.xml`. No secrets are required.
+`lib/site-url.ts` is the sole origin resolver used by metadata, Open Graph, sitemap, and robots. Set `NEXT_PUBLIC_SITE_URL` to a real absolute origin with no path for non-Vercel production. Vercel uses `VERCEL_PROJECT_PRODUCTION_URL`, then its production `VERCEL_URL`. `example.com`, malformed URLs, and localhost in a Vercel production deployment fail loudly. The local fallback is never treated as a production Vercel origin.
 
 ## Validation
 
@@ -46,26 +33,13 @@ npm run lint
 npm run typecheck
 npm test
 npm run build
-# or all checks
-npm run check
+npm run test:browser
+npm run check # all of the above
+npm audit
 ```
 
-Manual QA should include keyboard-only navigation, theme cycling, reduced-motion emulation, and responsive widths. Test `/`, all three audience lenses, `/projects`, and featured case routes.
+Playwright exercises primary/audience/project navigation, mobile menu behavior, theme switching, console errors, keyboard navigation, and axe audits. CI installs Chromium and runs the same full sequence on pushes and pull requests to `main`.
 
-## Deployment
+## Content policy
 
-Set `NEXT_PUBLIC_SITE_URL` in the deployment environment, then deploy to any Next.js-capable Node host. For Vercel:
-
-```bash
-npx vercel
-npx vercel --prod
-```
-
-The production server can also be run directly:
-
-```bash
-npm run build
-npm start
-```
-
-See `docs/LEGACY_AUDIT.md` for removals and `docs/CONTENT_GAPS.md` for intentionally withheld material.
+Keep `maturity`, `states`, evidence, limitations, and next steps defensible. Add audited screenshots through a project's `media` field; do not substitute decorative legacy art. See `docs/PUBLIC_CLAIMS_AUDIT.md`, `docs/CONTENT_GAPS.md`, and `docs/LEGACY_AUDIT.md` before publishing new claims.
