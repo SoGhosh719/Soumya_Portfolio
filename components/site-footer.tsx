@@ -1,0 +1,2 @@
+import { profile } from "@/content/site";
+export function SiteFooter(){return <footer className="site-footer"><div><p className="eyebrow">Open to thoughtful conversations</p><h2>Build systems that preserve judgment.</h2></div><div><a className="button" href={`mailto:${profile.email}`}>Email Soumyabrata</a><p>{profile.email}<br/>{profile.location}</p></div><small>© {new Date().getFullYear()} {profile.name}. Designed around evidence, not decoration.</small></footer>}

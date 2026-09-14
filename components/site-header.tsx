@@ -1,0 +1,2 @@
+import Link from "next/link"; import { ThemeToggle } from "./theme-toggle";
+export function SiteHeader(){return <header className="site-header"><a className="skip-link" href="#main">Skip to content</a><div className="nav-wrap"><Link className="wordmark" href="/" aria-label="Soumyabrata Ghosh, home"><span>SG</span><b>Soumyabrata Ghosh</b></Link><nav aria-label="Primary"><Link href="/research">Research</Link><Link href="/engineering">Engineering</Link><Link href="/analytics">Analytics</Link><Link href="/projects">Archive</Link></nav><ThemeToggle/></div></header>}
