@@ -1,21 +1,17 @@
 # Content gaps
 
-This register keeps missing evidence visible without turning it into public claims.
+## Still withheld or awaiting evidence
 
-## Withheld from the site
-
-- **Current résumé/CV:** no current audited PDF is present. `profile.resumeUrl` remains `null`; the obsolete Business Analyst PDF was removed.
-- **Canonical production URL:** unresolved. Set `NEXT_PUBLIC_SITE_URL` at build time; the checked-in fallback is deliberately `https://example.com`.
-- **Social profiles:** GitHub and LinkedIn are disabled in `profile.social`. The legacy values were not republished because the profiles have not been audited for current public use.
-- **Project repositories and demos:** no repository or demo URL has been audited for NetMap, HPC OS, the automation engine, Zwitter, AKTIVIQ, StatusGuard, BUDA II, Vibraille, stroke modeling, or ISMRITI.
-- **Project media:** no current project screenshot or architecture export was verified. Case studies use accessible, code-native layouts rather than unrelated legacy images.
-- **NetMap:** evaluation, real-world study, and paper remain planned/unpublished.
-- **HPC OS:** an educator study has not been conducted.
-- **Automation engine:** larger production integration is incomplete; a retry/repair/evaluator cycle has not been independently evidenced here.
-- **Zwitter:** only the operational subsystem is described as deployed; broader modules remain partial. Customer-level records are intentionally excluded.
-- **AKTIVIQ:** curriculum is behind infrastructure; migration counts are omitted.
-- **StatusGuard:** an end-to-end RFC 3161 call is not verified, so timestamping remains a designed architecture item.
-- **Vibraille:** quarantined CGR accuracy is omitted; user/safety evaluation is not claimed.
-- **Archive expansion:** older Twitter sentiment, commercial-bank, actor-age, Boston transportation, payroll, supply-chain, and related projects need source/evidence audits before migration.
-- **Writing:** the legacy “From Chemistry to AI” article contained retired or disputed claims and remains unpublished pending factual editing.
-- **Awards:** the Clark Tank finalist distinction is not displayed until award wording and date can be audited independently.
+- Current audited résumé/CV, social profiles, repositories, and demos remain disabled.
+- Real project screenshots are absent; the content model now provides `media` slots for later audited assets.
+- NetMap comparative/field evaluation and publication remain planned.
+- HPC OS educator study remains planned.
+- Automation Engine production integration and escalation-policy evaluation remain incomplete.
+- Zwitter customer data and broader partial modules remain unpublished.
+- AKTIVIQ curriculum and evaluation audit remain incomplete.
+- StatusGuard RFC 3161 end-to-end operation remains unverified.
+- Vibraille user/safety study and quarantined CGR accuracy remain unpublished.
+- Boston transportation R² remains withheld pending leakage, target, and split audit.
+- Actor-age split protocol, commercial-bank specification, and Twitter evaluation protocol require original-artifact review.
+- Payroll, supply-chain, marketing, and writing material remain withheld because the workspace contains no sufficient source record.
+- Recognition wording was migrated from the supplied master-record assertions in the task; personal copies/links should be verified by the owner before adding external evidence.
